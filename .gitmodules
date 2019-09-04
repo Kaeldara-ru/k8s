@@ -1,3 +1,6 @@
 [submodule "k8s_storage/heketi"]
 	path = k8s_storage/heketi
 	url = https://github.com/heketi/heketi.git
+[submodule "k8s_systems/metallb"]
+	path = k8s_systems/metallb
+	url = https://github.com/danderson/metallb.git
