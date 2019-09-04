@@ -1,0 +1,56 @@
+{
+    "clusters": [
+        {
+            "nodes": [
+                {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "k8s-node-1"
+                            ],
+                            "storage": [
+                                "10.77.146.241"
+                            ]
+                        },
+                        "zone": 1
+                    },
+                    "devices": [
+                        "/dev/sdb"
+                    ]
+                },
+                {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "k8s-node-2"
+                            ],
+                            "storage": [
+                                "10.77.146.242"
+                            ]
+                        },
+                        "zone": 1
+                    },
+                    "devices": [
+                        "/dev/sdb"
+                    ]
+                },
+                {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "k8s-node-3"
+                            ],
+                            "storage": [
+                                "10.77.146.243"
+                            ]
+                        },
+                        "zone": 1
+                    },
+                    "devices": [
+                        "/dev/sdb"
+                    ]
+                }
+            ]
+        }
+    ]
+}

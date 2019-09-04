@@ -1,0 +1,3 @@
+[submodule "k8s_storage/heketi"]
+	path = k8s_storage/heketi
+	url = https://github.com/heketi/heketi.git
