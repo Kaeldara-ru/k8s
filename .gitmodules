@@ -4,3 +4,6 @@
 [submodule "k8s_systems/metallb"]
 	path = k8s_systems/metallb
 	url = https://github.com/danderson/metallb.git
+[submodule "k8s_systems/nvidia-device-plugin"]
+	path = k8s_systems/nvidia-device-plugin
+	url = https://github.com/NVIDIA/k8s-device-plugin.git
