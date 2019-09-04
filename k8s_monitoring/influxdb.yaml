@@ -1,3 +1,17 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: influxdb-volume
+  namespace: kube-system
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "gluster-fs"
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -14,6 +28,13 @@ spec:
       containers:
       - name: influxdb
         image: k8s.gcr.io/heapster-influxdb-amd64:v1.5.2
+        resources:
+          limits:
+           cpu: 500m
+           memory: 512Mi
+          requests:
+           cpu: 250m
+           memory: 128Mi
         volumeMounts:
         - mountPath: /data
           name: influxdb-storage

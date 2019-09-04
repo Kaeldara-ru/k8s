@@ -1,0 +1,8 @@
+apiVersion: storage.k8s.io/v1beta1
+kind: StorageClass
+metadata:
+  name: gluster-fs
+provisioner: kubernetes.io/glusterfs
+parameters:
+  resturl: "http://10.36.0.11:8080"
+allowVolumeExpansion: true
