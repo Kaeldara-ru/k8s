@@ -10,6 +10,8 @@ kind: PersistentVolumeClaim
 metadata:
   name: jenkins-volume
   namespace: jenkins
+  labels:
+    app: jenkins
   annotations:
     volume.beta.kubernetes.io/storage-class: "gluster-fs"
 spec:
@@ -32,7 +34,7 @@ spec:
   selector:
     app: jenkins
 ---
-apiVersion: extensions/v1beta1
+apiVersion: app/v1
 kind: Deployment
 metadata:
   name: jenkins

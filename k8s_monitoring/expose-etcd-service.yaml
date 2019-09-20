@@ -1,0 +1,55 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    k8s-app: etcd
+  name: etcd
+  namespace: kube-system
+spec:
+  clusterIP: None
+  ports:
+  - name: metrics
+    port: 2379
+    targetPort: 2379
+  selector: null
+
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  labels:
+    k8s-app: etcd
+  name: etcd
+  namespace: kube-system
+subsets:
+- addresses:
+  - ip: 10.77.146.41
+  - ip: 10.77.146.42
+  - ip: 10.77.146.43
+  ports:
+  - name: metrics
+    port: 2379
+    protocol: TCP
+
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    k8s-app: etcd
+  name: etcd
+  namespace: kube-system
+spec:
+  endpoints:
+  - interval: 30s
+    port: metrics
+    scheme: https
+    tlsConfig:
+      caFile: /etc/prometheus/secrets/kube-etcd-client-certs/ca.crt
+      certFile: /etc/prometheus/secrets/kube-etcd-client-certs/etcd-client.crt
+      keyFile: /etc/prometheus/secrets/kube-etcd-client-certs/etcd-client.key
+      serverName: k8s-etcd-1
+  jobLabel: k8s-app
+  selector:
+    matchLabels:
+      k8s-app: etcd
