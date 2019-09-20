@@ -1,6 +1,6 @@
 {
     "kind": "DaemonSet",
-    "apiVersion": "extensions/v1beta1",
+    "apiVersion": "apps/v1",
     "metadata": {
         "name": "glusterfs",
         "labels": {
@@ -32,7 +32,7 @@
                         "resources": {
                           "limits": {
                             "cpu": "1000m",
-                            "memory": "4096Mi"
+                            "memory": "2048Mi"
                             },
                           "requests": {
                             "cpu": "250m",
