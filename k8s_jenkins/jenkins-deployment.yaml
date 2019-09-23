@@ -71,6 +71,16 @@ spec:
               containerPort: 8080
             - name: jnlp-port
               containerPort: 50000
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 20
           volumeMounts:
             - name: jenkins-home
               mountPath: /var/jenkins_home
