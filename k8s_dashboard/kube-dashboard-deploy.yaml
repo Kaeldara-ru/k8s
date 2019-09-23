@@ -193,6 +193,16 @@ spec:
           ports:
             - containerPort: 8443
               protocol: TCP
+          readinessProbe:
+            tcpSocket:
+              port: 8443
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 8443
+            initialDelaySeconds: 15
+            periodSeconds: 20
           args:
             - --auto-generate-certificates
             - --namespace=kubernetes-dashboard
