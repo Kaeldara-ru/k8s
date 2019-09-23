@@ -32,6 +32,16 @@ spec:
       containers:
       - name: kibana
         image: docker.elastic.co/kibana/kibana:7.3.2
+        readinessProbe:
+          tcpSocket:
+            port: 5601
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 5601
+          initialDelaySeconds: 15
+          periodSeconds: 20
         resources:
           limits:
             cpu: 1000m

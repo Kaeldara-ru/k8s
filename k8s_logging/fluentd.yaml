@@ -74,6 +74,16 @@ spec:
       containers:
       - name: fluentd
         image: fluent/fluentd-kubernetes-daemonset:v1.4.2-debian-elasticsearch-1.1
+      #  readinessProbe:
+      #    tcpSocket:
+      #      port: 9100
+      #    initialDelaySeconds: 5
+      #    periodSeconds: 10
+      #  livenessProbe:
+      #    tcpSocket:
+      #      port: 9100
+      #    initialDelaySeconds: 15
+      #    periodSeconds: 20
         env:
           - name:  FLUENT_ELASTICSEARCH_HOST
             value: "elasticsearch.kube-logging.svc.cluster.local"
