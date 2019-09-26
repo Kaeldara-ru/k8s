@@ -13,3 +13,6 @@
 [submodule "k8s_monitoring/kube-prometheus"]
 	path = k8s_monitoring/kube-prometheus
 	url = https://github.com/coreos/kube-prometheus.git
+[submodule "k8s_monitoring/metrics-server"]
+	path = k8s_monitoring/metrics-server
+	url = https://github.com/kubernetes-incubator/metrics-server
