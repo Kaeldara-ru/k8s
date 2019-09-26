@@ -7,9 +7,6 @@
 [submodule "k8s_systems/nvidia-device-plugin"]
 	path = k8s_systems/nvidia-device-plugin
 	url = https://github.com/NVIDIA/k8s-device-plugin.git
-[submodule "k8s_monitoring/kube-prometheu"]
-	path = k8s_monitoring/kube-prometheu
-	url = https://github.com/coreos/kube-prometheus.git
 [submodule "k8s_monitoring/kube-prometheus"]
 	path = k8s_monitoring/kube-prometheus
 	url = https://github.com/coreos/kube-prometheus.git
