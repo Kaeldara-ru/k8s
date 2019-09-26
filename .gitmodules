@@ -13,3 +13,6 @@
 [submodule "k8s_monitoring/metrics-server"]
 	path = k8s_monitoring/metrics-server
 	url = https://github.com/kubernetes-incubator/metrics-server
+[submodule "k8s_systems/polaris"]
+	path = k8s_systems/polaris
+	url = https://github.com/FairwindsOps/polaris.git
